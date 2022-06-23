@@ -8,6 +8,8 @@ in this [blog post](https://www.esri.com/arcgis-blog/products/js-api-arcgis/deve
 
 ## Steps
 
-Step 1 - Run `npm i` to install all the dependencies.
-Step 2 - Run `npm run dev` to launch a developer build.
-Step 3 - Run `npm run build` to create a production build in the `dist` directory.
+**Step 1** - Run `npm i` to install all the dependencies.
+
+**Step 2** - Run `npm run dev` to launch a developer build.
+
+**Step 3** - Run `npm run build` to create a production build in the `dist` directory.
