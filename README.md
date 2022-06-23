@@ -1,9 +1,9 @@
 ## Basic Vite application using ArcGIS API for JavaScript
 
 This is a basic application that shows how to integrate Vite with the 
-ArcGIS API for JavaScript to include mapping functionality. 
+ArcGIS API for JavaScript. 
 
-You can read more about ArcGIS API for JavaScript and ES modules
+You can read more about the ArcGIS API for JavaScript and ES modules
 in this [blog post](https://www.esri.com/arcgis-blog/products/js-api-arcgis/developers/arcgis-api-for-javascript-learn-about-es-modules/).
 
 ## Steps
