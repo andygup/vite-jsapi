@@ -7,3 +7,8 @@ body,
   height: 100%;
   width: 100%;
 }
+#geolocationDiv {
+  background-color: white;
+  margin-right: 20px;
+  padding: 15px;
+}
