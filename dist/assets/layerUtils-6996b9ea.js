@@ -1,0 +1,1 @@
+function u(r){var t;return(r==null?void 0:r.type)==="feature"&&!r.url&&((t=r.source)==null?void 0:t.type)==="memory"}function o(r){var t;return(r==null?void 0:r.type)==="feature"&&((t=r.source)==null?void 0:t.type)==="feature-layer"}export{u as l,o};
