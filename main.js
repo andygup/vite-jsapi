@@ -27,10 +27,10 @@ track.on("track", (d) => {
   geolocationDiv.innerText = `
   Latitude: ${d.position.coords.latitude.toFixed(3)}
   Longitude: ${d.position.coords.longitude.toFixed(3)}
-  Altitude: ${d.position.coords.altitude}
-  Heading: ${d.position.coords.heading}
-  Speed: ${d.position.coords.speed}
-  Accuracy: ${d.position.coords.accuracy}m`;
+  Altitude: ${d.position.coords.altitude.toFixed(1)}
+  Heading: ${d.position.coords.heading.toFixed(0)}
+  Speed: ${d.position.coords.speed.toFixed(2)}
+  Accuracy: ${d.position.coords.accuracy.toFixed(0)}m`;
 })
 
 track.on("track-error", (e) => {
