@@ -25,12 +25,12 @@ view.ui.add(geolocationDiv, "top-right");
 track.on("track", (d) => {
   console.log("Track:", d);
   geolocationDiv.innerText = `
-  Latitude: ${d.position.coords.latitude.toFixed(3)}
-  Longitude: ${d.position.coords.longitude.toFixed(3)}
-  Altitude: ${d.position.coords.altitude.toFixed(1)}
-  Heading: ${d.position.coords.heading.toFixed(0)}
-  Speed: ${d.position.coords.speed.toFixed(2)}
-  Accuracy: ${d.position.coords.accuracy.toFixed(0)}m`;
+  Latitude: ${d.position.coords.latitude?.toFixed(3)}
+  Longitude: ${d.position.coords.longitude?.toFixed(3)}
+  Altitude: ${d.position.coords.altitude?.toFixed(1)}
+  Heading: ${d.position.coords.heading?.toFixed(0)}
+  Speed: ${d.position.coords.speed?.toFixed(2)}
+  Accuracy: ${d.position.coords.accuracy?.toFixed(0)}m`;
 })
 
 track.on("track-error", (e) => {
