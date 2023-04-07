@@ -4,7 +4,7 @@ import Track from "@arcgis/core/widgets/Track.js";
 import TrackViewModel from "@arcgis/core/widgets/Track/TrackViewModel";
 import "./style.css";
 
-console.log("positionFilterFunction to false");
+console.log("Use 4.26.5");
 
 const geolocationDiv = document.getElementById("geolocationDiv");
 
