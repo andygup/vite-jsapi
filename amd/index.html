@@ -1,0 +1,101 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="initial-scale=1,maximum-scale=1,user-scalable=no"
+    />
+    <title>
+      Track Widget
+    </title>
+    <style>
+      html,
+      body,
+      #viewDiv {
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+      }
+      #geolocationDiv {
+        background-color: white;
+        margin-right: 20px;
+        padding: 15px;
+      }      
+    </style>
+
+    <link
+      rel="stylesheet"
+      href="https://js.arcgis.com/next/esri/themes/light/main.css"
+    />
+    <script src="https://js.arcgis.com/next/"></script>
+
+    <script>
+      require(["esri/Map", "esri/views/MapView"], (Map, MapView) => {
+        const map = new Map({
+          basemap: "topo-vector"
+        });
+
+        const view = new MapView({
+          container: "viewDiv",
+          map: map,
+          zoom: 4,
+          center: [15, 65] // longitude, latitude
+        });
+        
+        view.when(() => {
+        let id;
+        let target;
+        let options;
+        
+        const geolocationDiv = document.getElementById("geolocationDiv");      
+        view.ui.add(geolocationDiv, "top-right");        
+
+        function success(d) {
+          console.log("Track:", d);
+          geolocationDiv.innerText = `
+          Timestap: ${d.timestamp}
+          Latitude: ${d.coords.latitude?.toFixed(4)}
+          Longitude: ${d.coords.longitude?.toFixed(4)}
+          Altitude: ${d.coords.altitude?.toFixed(1)}
+          Heading: ${d.coords.heading?.toFixed(0)}
+          Speed: ${d.coords.speed?.toFixed(2)}
+          Accuracy: ${d.coords.accuracy?.toFixed(0)}m`;   
+          
+          view.zoom = 14;
+          view.goTo({            
+            center: [d.coords.longitude, d.coords.latitude]
+          })
+          .catch((err) => {
+            if (error.name != "AbortError") {
+              console.error(error);
+            }
+          })
+        }
+
+        function error(err) {
+          console.error(`ERROR(${err.code}): ${err.message}`);
+        }
+
+        target = {
+          latitude: 0,
+          longitude: 0,
+        };
+
+        options = {
+          enableHighAccuracy: false,
+          timeout: 5000,
+          maximumAge: 0,
+        };
+
+        id = navigator.geolocation.watchPosition(success, error, options);          
+        })
+      });
+    </script>
+  </head>
+
+  <body>
+    <div id="geolocationDiv">Waiting for location data...</div>
+    <div id="viewDiv"></div>
+  </body>
+</html>
