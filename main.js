@@ -23,7 +23,7 @@ const track = new Track({
 
 const trackVM = new TrackViewModel({
   view,
-  positionFilterFunction: null
+  positionFilterFunction: false
 })
 
 view.ui.add(track, "top-left");
