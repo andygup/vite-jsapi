@@ -1,0 +1,1 @@
+function f(){return new Float32Array(3)}function s(n){const t=new Float32Array(3);return t[0]=n[0],t[1]=n[1],t[2]=n[2],t}function u(n,t,o){const r=new Float32Array(3);return r[0]=n,r[1]=t,r[2]=o,r}function e(){return u(1,1,1)}function c(){return u(1,0,0)}function a(){return u(0,1,0)}function i(){return u(0,0,1)}e();c();a();i();export{s as a,f as c,u as f};

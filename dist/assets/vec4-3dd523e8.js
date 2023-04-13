@@ -1,0 +1,1 @@
+function p(n,c){return n[0]=c[0],n[1]=c[1],n[2]=c[2],n[3]=c[3],n}function x(n,c,s,r,e){return n[0]=c,n[1]=s,n[2]=r,n[3]=e,n}function y(n,c,s,r){const e=c[0],f=c[1],i=c[2],l=c[3];return n[0]=e+r*(s[0]-e),n[1]=f+r*(s[1]-f),n[2]=i+r*(s[2]-i),n[3]=l+r*(s[3]-l),n}function a(n,c){return n[0]===c[0]&&n[1]===c[1]&&n[2]===c[2]&&n[3]===c[3]}export{p as c,a as e,y as l,x as s};
