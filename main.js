@@ -4,7 +4,7 @@ import Track from "@arcgis/core/widgets/Track.js";
 import TrackViewModel from "@arcgis/core/widgets/Track/TrackViewModel";
 import "./style.css";
 
-console.log("Use logger 2");
+console.log("Position filter = true");
 
 const geolocationDiv = document.getElementById("geolocationDiv");
 
@@ -23,12 +23,12 @@ const track = new Track({
   view: view
 });
 
-const trackVM = new TrackViewModel({
-  view,
-  positionFilterFunction: false
-})
+// const trackVM = new TrackViewModel({
+//   view,
+//   positionFilterFunction: false
+// })
 
-// trackVM.positionFilterFunction = false;
+track.viewModel.positionFilterFunction = true;
 
 view.ui.add(track, "top-left");
 view.ui.add(geolocationDiv, "top-right");

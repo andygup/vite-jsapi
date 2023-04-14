@@ -2,7 +2,7 @@
   "name": "vite-jsapi",
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --force",
     "build": "vite build --base=/vite-jsapi/dist/",
     "preview": "vite preview"
   },
