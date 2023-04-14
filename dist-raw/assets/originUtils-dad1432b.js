@@ -1,0 +1,1 @@
+import{i as u}from"./multiOriginJSONSupportUtils-ad07e08e.js";function t(i){!i||!i.writtenProperties||i.writtenProperties.forEach(({target:r,propName:s,newOrigin:f})=>{u(r)&&f&&r.originOf(s)!==f&&r.updateOrigin(s,f)})}export{t as u};

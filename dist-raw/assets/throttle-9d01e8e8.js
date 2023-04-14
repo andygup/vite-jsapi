@@ -1,0 +1,1 @@
+function a(s,o,p,n){let u=null,t=1e3;typeof o=="number"?(t=o,n=p):(u=o??null,t=p);let e=0,i;const f=()=>{e=0,s.apply(n,i)},l=(...c)=>{u&&u.apply(n,c),i=c,t?e||(e=setTimeout(f,t)):f()};return l.remove=()=>{e&&(clearTimeout(e),e=0)},l.forceUpdate=()=>{e&&(clearTimeout(e),f())},l.hasPendingUpdates=()=>!!e,l}export{a as t};
