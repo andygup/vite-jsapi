@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite --force",
-    "build": "vite build --base=/vite-jsapi/dist/",
+    "build": "vite build --base=/vite-jsapi/dist-raw/",
     "preview": "vite preview"
   },
   "devDependencies": {
