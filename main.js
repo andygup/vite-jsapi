@@ -41,7 +41,8 @@ track.on("track", (d) => {
   Altitude: ${d.position.coords.altitude?.toFixed(1)}
   Heading: ${d.position.coords.heading?.toFixed(0)}
   Speed: ${d.position.coords.speed?.toFixed(2)}
-  Accuracy: ${d.position.coords.accuracy?.toFixed(0)}m`;
+  Accuracy: ${d.position.coords.accuracy?.toFixed(0)}m
+  Position Filter: ${track.viewModel.positionFilterFunction}`;
 })
 
 track.on("track-error", (e) => {
