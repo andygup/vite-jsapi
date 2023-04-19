@@ -1,10 +1,11 @@
 import Map from "@arcgis/core/Map.js";
 import MapView from "@arcgis/core/views/MapView.js";
 import Track from "@arcgis/core/widgets/Track.js";
+import * as esriNS from "@arcgis/core/kernel.js";
 import TrackViewModel from "@arcgis/core/widgets/Track/TrackViewModel";
 import "./style.css";
 
-console.log("Position filter = false");
+console.log("Version", esriNS.fullVersion);
 
 const geolocationDiv = document.getElementById("geolocationDiv");
 
@@ -42,7 +43,8 @@ track.on("track", (d) => {
   Heading: ${d.position.coords.heading?.toFixed(0)}
   Speed: ${d.position.coords.speed?.toFixed(2)}
   Accuracy: ${d.position.coords.accuracy?.toFixed(0)}m
-  Position Filter: ${track.viewModel.positionFilterFunction}`;
+  Position Filter: ${track.viewModel.positionFilterFunction}
+  Version: ${esriNS.fullVersion}`;
 })
 
 track.on("track-error", (e) => {
