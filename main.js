@@ -28,7 +28,7 @@ const track = new Track({
 //   positionFilterFunction: false
 // })
 
-track.viewModel.positionFilterFunction = false;
+track.viewModel.positionFilterFunction = true;
 
 view.ui.add(track, "top-left");
 view.ui.add(geolocationDiv, "top-right");

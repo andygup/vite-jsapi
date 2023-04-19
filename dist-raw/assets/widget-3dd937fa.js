@@ -1,1 +1,0 @@
-import"./index-30d9bb6f.js";function o(t){return t&&typeof t.render=="function"}function i(t){return t&&typeof t.postMixInProperties=="function"&&typeof t.buildRendering=="function"&&typeof t.postCreate=="function"&&typeof t.startup=="function"}export{i as h,o as i};

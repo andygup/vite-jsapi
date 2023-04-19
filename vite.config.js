@@ -2,7 +2,7 @@ import { defineConfig } from "vite";
 
 const config = {
   build: {
-    outDir: "./dist-raw",
+    outDir: "./dist",
     chunkSizeWarningLimit: 1500
   },
   server: {
