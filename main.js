@@ -21,7 +21,12 @@ const view = new MapView({
 });
 
 const track = new Track({
-  view: view
+  view: view,
+  geolocationOptions: {
+    maximumAge: 0,
+    timeout: 15000,
+    enableHighAccuracy: true
+  }  
 });
 
 // const trackVM = new TrackViewModel({
