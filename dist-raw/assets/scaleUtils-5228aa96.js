@@ -1,1 +1,0 @@
-import{Q as r,fo as s}from"./index-0cbe37a0.js";const a=96;function u(e,n){const t=n||e.extent,o=e.width,c=r(t&&t.spatialReference);return t&&o?t.width/o*c*s*a:0}function l(e,n){const t=r(n);return e/(t*s*a)}export{l as a,u as g};
