@@ -24,7 +24,7 @@ const track = new Track({
   view: view,
   geolocationOptions: {
     maximumAge: 0,
-    timeout: 15000,
+    timeout: 30000,
     enableHighAccuracy: true
   }  
 });

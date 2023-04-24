@@ -3,13 +3,14 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite --force",
+    "build-basic": "vite build",
     "build": "vite build --base=/vite-jsapi/dist/",
     "preview": "vite preview"
   },
   "devDependencies": {
-    "vite": "^4.2.1"
+    "vite": "^4.3.0"
   },
   "dependencies": {
-    "@arcgis/core": "file:arcgis-core-4.27.0-next.20230419.tgz"
+    "@arcgis/core": "file:arcgis-core-4.27.0-next.20230424.tgz"
   }
 }
