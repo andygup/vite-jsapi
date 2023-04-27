@@ -6,6 +6,7 @@ import TrackViewModel from "@arcgis/core/widgets/Track/TrackViewModel";
 import "./style.css";
 
 console.log("Version", esriNS.fullVersion);
+let positionsArray = [];
 
 const geolocationDiv = document.getElementById("geolocationDiv");
 
@@ -26,7 +27,16 @@ const track = new Track({
     maximumAge: 0,
     timeout: 30000,
     enableHighAccuracy: true
-  }  
+  },
+  // viewModel: {
+  //   positionFilterFunction: (p) => {
+  //     let position = null;
+  //     positionsArray.push(p.position.coords);
+  //     positionsArray.length > 4 ? position = positionsArray.pop() : position = p;
+  //     console.log("filter", positionsArray);
+  //     return position;
+  //   }    
+  // }
 });
 
 // const trackVM = new TrackViewModel({
@@ -34,7 +44,14 @@ const track = new Track({
 //   positionFilterFunction: false
 // })
 
-track.viewModel.positionFilterFunction = true;
+// Return a boolean
+track.viewModel.positionFilterFunction = (p) => {
+  let position = null;
+  positionsArray.push(p.position.coords);
+  positionsArray.length > 4 ? position = positionsArray.pop() : position = p;
+  console.log("filter", positionsArray);
+  return position;
+};
 
 view.ui.add(track, "top-left");
 view.ui.add(geolocationDiv, "top-right");
@@ -48,7 +65,7 @@ track.on("track", (d) => {
   Heading: ${d.position.coords.heading?.toFixed(0)}
   Speed: ${d.position.coords.speed?.toFixed(2)}
   Accuracy: ${d.position.coords.accuracy?.toFixed(0)}m
-  Position Filter: ${track.viewModel.positionFilterFunction}
+  Position Filter: ${typeof track.viewModel.positionFilterFunction === "function"}
   Version: ${esriNS.fullVersion}`;
 })
 

@@ -1,1 +1,0 @@
-function c(n,o,r){for(let e=0;e<r;++e)o[e*2]=n[e],o[e*2+1]=n[e]-o[e*2]}function a(n,o){const r=n.length;for(let e=0;e<r;++e)l[0]=n[e],o[e]=l[0];return o}function t(n,o){const r=n.length;for(let e=0;e<r;++e)l[0]=n[e],l[1]=n[e]-l[0],o[e]=l[1];return o}const l=new Float32Array(2);export{a,t as b,c as e};
