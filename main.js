@@ -53,6 +53,17 @@ track.viewModel.positionFilterFunction = (p) => {
   return position;
 };
 
+
+// track.viewModel.positionFilterFunction = (value) => {
+//   const myLocation = {
+//     type: "point", // autocasts as new Point()
+//     longitude: value.position.coords.longitude,
+//     latitude: value.position.coords.latitude  
+//   };
+//   const withinExtent = geometryEngine.within(myLocation, testExtent);
+//   return withinExtent;
+// };
+
 view.ui.add(track, "top-left");
 view.ui.add(geolocationDiv, "top-right");
 
