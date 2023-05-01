@@ -3,6 +3,7 @@ import MapView from "@arcgis/core/views/MapView.js";
 import Track from "@arcgis/core/widgets/Track.js";
 import * as esriNS from "@arcgis/core/kernel.js";
 import TrackViewModel from "@arcgis/core/widgets/Track/TrackViewModel";
+import Graphic from "@arcgis/core/Graphic";
 import "./style.css";
 
 console.log("Version", esriNS.fullVersion);
@@ -28,6 +29,19 @@ const track = new Track({
     timeout: 30000,
     enableHighAccuracy: true
   },
+  graphic: new Graphic ({
+   symbol: {
+     // autocasts as new SimpleMarkerSymbol()
+     type: "simple-marker",
+     size: "12px",
+     color: "blue",
+     // autocasts as new SimpleLineSymbol()
+     outline: {
+       color: "#efefef",
+       width: "1.5px"
+     }
+   }
+  })  
   // viewModel: {
   //   positionFilterFunction: (p) => {
   //     let position = null;
@@ -39,10 +53,10 @@ const track = new Track({
   // }
 });
 
-// const trackVM = new TrackViewModel({
-//   view,
-//   positionFilterFunction: false
-// })
+const trackVM = new TrackViewModel({
+  view,
+  positionFilterFunction: false
+})
 
 // Return a boolean
 track.viewModel.positionFilterFunction = (p) => {
