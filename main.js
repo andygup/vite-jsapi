@@ -33,8 +33,8 @@ const track = new Track({
    symbol: {
      // autocasts as new SimpleMarkerSymbol()
      type: "simple-marker",
-     size: "12px",
-     color: "blue",
+     size: "20px",
+     color: "red",
      // autocasts as new SimpleLineSymbol()
      outline: {
        color: "#efefef",
