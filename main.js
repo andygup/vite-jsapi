@@ -9,7 +9,7 @@ import "./style.css";
 console.log("Version", esriNS.fullVersion);
 let positionsArray = [];
 
-const geolocationDiv = document.getElementById("geolocationDiv");
+// const geolocationDiv = document.getElementById("geolocationDiv");
 
 const map = new Map({
   basemap: "topo-vector"
@@ -78,22 +78,22 @@ track.viewModel.positionFilterFunction = (p) => {
 // };
 
 view.ui.add(track, "top-left");
-view.ui.add(geolocationDiv, "top-right");
+// view.ui.add(geolocationDiv, "top-right");
 
 track.on("track", (d) => {
   const longitude = d.position.coords.longitude.toFixed(4);
   const latitude = d.position.coords.latitude.toFixed(4);
   console.log("Track1", `${longitude}, ${latitude}`);
   console.log("Track:", d);
-  geolocationDiv.innerText = `
-  Latitude: ${d.position.coords.latitude?.toFixed(4)}
-  Longitude: ${d.position.coords.longitude?.toFixed(4)}
-  Altitude: ${d.position.coords.altitude?.toFixed(1)}
-  Heading: ${d.position.coords.heading?.toFixed(0)}
-  Speed: ${d.position.coords.speed?.toFixed(2)}
-  Accuracy: ${d.position.coords.accuracy?.toFixed(0)}m
-  Position Filter: ${typeof track.viewModel.positionFilterFunction === "function"}
-  Version: ${esriNS.fullVersion}`;
+  // geolocationDiv.innerText = `
+  // Latitude: ${d.position.coords.latitude?.toFixed(4)}
+  // Longitude: ${d.position.coords.longitude?.toFixed(4)}
+  // Altitude: ${d.position.coords.altitude?.toFixed(1)}
+  // Heading: ${d.position.coords.heading?.toFixed(0)}
+  // Speed: ${d.position.coords.speed?.toFixed(2)}
+  // Accuracy: ${d.position.coords.accuracy?.toFixed(0)}m
+  // Position Filter: ${typeof track.viewModel.positionFilterFunction === "function"}
+  // Version: ${esriNS.fullVersion}`;
 })
 
 track.on("track-error", (e) => {
