@@ -1,15 +1,17 @@
 import Map from "@arcgis/core/Map.js";
-import MapView from "@arcgis/core/views/MapView.js";
+import MapView from "@arcgis/core/views/SceneView";
 import Track from "@arcgis/core/widgets/Track.js";
 import * as esriNS from "@arcgis/core/kernel.js";
+import esriConfig from "@arcgis/core/config.js";
 import TrackViewModel from "@arcgis/core/widgets/Track/TrackViewModel";
 import Graphic from "@arcgis/core/Graphic";
+esriConfig.assetsPath = "./assets2";
 import "./style.css";
 
 console.log("Version", esriNS.fullVersion);
 let positionsArray = [];
 
-// const geolocationDiv = document.getElementById("geolocationDiv");
+const geolocationDiv = document.getElementById("geolocationDiv");
 
 const map = new Map({
   basemap: "topo-vector"
@@ -85,15 +87,15 @@ track.on("track", (d) => {
   const latitude = d.position.coords.latitude.toFixed(4);
   console.log("Track1", `${longitude}, ${latitude}`);
   console.log("Track:", d);
-  // geolocationDiv.innerText = `
-  // Latitude: ${d.position.coords.latitude?.toFixed(4)}
-  // Longitude: ${d.position.coords.longitude?.toFixed(4)}
-  // Altitude: ${d.position.coords.altitude?.toFixed(1)}
-  // Heading: ${d.position.coords.heading?.toFixed(0)}
-  // Speed: ${d.position.coords.speed?.toFixed(2)}
-  // Accuracy: ${d.position.coords.accuracy?.toFixed(0)}m
-  // Position Filter: ${typeof track.viewModel.positionFilterFunction === "function"}
-  // Version: ${esriNS.fullVersion}`;
+  geolocationDiv.innerText = `
+  Latitude: ${d.position.coords.latitude?.toFixed(4)}
+  Longitude: ${d.position.coords.longitude?.toFixed(4)}
+  Altitude: ${d.position.coords.altitude?.toFixed(1)}
+  Heading: ${d.position.coords.heading?.toFixed(0)}
+  Speed: ${d.position.coords.speed?.toFixed(2)}
+  Accuracy: ${d.position.coords.accuracy?.toFixed(0)}m
+  Position Filter: ${typeof track.viewModel.positionFilterFunction === "function"}
+  Version: ${esriNS.fullVersion}`;
 })
 
 track.on("track-error", (e) => {
