@@ -14,7 +14,8 @@ let positionsArray = [];
 const geolocationDiv = document.getElementById("geolocationDiv");
 
 const map = new Map({
-  basemap: "topo-vector"
+  basemap: "topo-vector",
+  ground: "world-elevation"
 });
 
 const view = new MapView({
