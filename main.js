@@ -1,5 +1,5 @@
 import Map from "@arcgis/core/Map.js";
-import MapView from "@arcgis/core/views/SceneView";
+import MapView from "@arcgis/core/views/MapView";
 import Track from "@arcgis/core/widgets/Track.js";
 import * as esriNS from "@arcgis/core/kernel.js";
 import esriConfig from "@arcgis/core/config.js";
@@ -14,8 +14,7 @@ let positionsArray = [];
 const geolocationDiv = document.getElementById("geolocationDiv");
 
 const map = new Map({
-  basemap: "topo-vector",
-  ground: "world-elevation"
+  basemap: "topo-vector"
 });
 
 const view = new MapView({
