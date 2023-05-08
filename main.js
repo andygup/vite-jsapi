@@ -1,11 +1,11 @@
 import Map from "@arcgis/core/Map.js";
-import MapView from "@arcgis/core/views/MapView";
+import MapView from "@arcgis/core/views/MapView.js";
 import Track from "@arcgis/core/widgets/Track.js";
 import * as esriNS from "@arcgis/core/kernel.js";
 import esriConfig from "@arcgis/core/config.js";
 import TrackViewModel from "@arcgis/core/widgets/Track/TrackViewModel";
 import Graphic from "@arcgis/core/Graphic";
-esriConfig.assetsPath = "./assets2";
+// esriConfig.assetsPath = "./assets2";
 import "./style.css";
 
 console.log("Version", esriNS.fullVersion);
