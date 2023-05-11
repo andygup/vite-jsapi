@@ -1,1 +1,0 @@
-import{_ as o}from"./index-989909ce.js";async function _(r,t){const{WhereClause:e}=await o(()=>import("./WhereClause-89ac4fc8.js").then(n=>n.W),["assets/WhereClause-89ac4fc8.js","assets/index-989909ce.js","assets/index-0492b785.css","assets/executionError-c92d3b85.js"]);return e.create(r,t)}function a(r,t){return r!=null?t!=null?`(${r}) AND (${t})`:r:t}export{_ as e,a as n};

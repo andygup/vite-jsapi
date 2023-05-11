@@ -1,5 +1,5 @@
 import Map from "@arcgis/core/Map.js";
-import MapView from "@arcgis/core/views/MapView.js";
+import MapView from "@arcgis/core/views/SceneView.js";
 import Track from "@arcgis/core/widgets/Track.js";
 import * as esriNS from "@arcgis/core/kernel.js";
 import esriConfig from "@arcgis/core/config.js";
